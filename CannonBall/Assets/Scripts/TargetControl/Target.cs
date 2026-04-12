@@ -7,9 +7,16 @@ namespace TargetControl
     {
         [SerializeField] private TargetModel _model;
         [SerializeField] private TargetCollider _collider;
+        
+        private GameCore _gameCore;
 
         public event Action Hit;
-        
+
+        private void Awake()
+        {
+            _gameCore = FindObjectOfType<GameCore>();
+        }
+
         private void OnEnable()
         {
             _collider.Hit += OnHit;
@@ -24,6 +31,8 @@ namespace TargetControl
         {
             Hit?.Invoke();
             _model.AnimateHit();
+            
+            _gameCore.AddScore(GameCore.ADD_SCORE_VALUE);
         }
         
         private void OnValidate()

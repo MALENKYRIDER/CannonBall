@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetControl.TargetModel
   _renderer: {fileID: 2269746157335427337}
+  _target: {fileID: 9040316909520066874}
 --- !u!64 &6373985187805087089
 MeshCollider:
   m_ObjectHideFlags: 0
